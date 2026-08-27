@@ -1,25 +1,23 @@
-const accordeons = document.querySelectorAll('.accordeon');
-const accordeonHeader = document.querySelector('.accordeon__header');
-const accordeonBody = document.querySelector('.accordeon__body');
+document.addEventListener("DOMContentLoaded", () => {
+  const accordions = document.querySelectorAll(".accordion");
 
-const accordeonBodyHeight = accordeonBody.offsetHeight;
+  accordions.forEach((el) => {
+    el.addEventListener("click", (event) => {
+      const self = event.currentTarget;
+      const control = self.querySelector(".accordion__control");
+      const content = self.querySelector(".accordion__content");
 
-console.log(accordeonBodyHeight)
+      self.classList.toggle("open");
 
-accordeonHeader.addEventListener('click', function(event) {
-    event.stopPropagation()
-    accordeons.forEach((elem) => elem.classList.toggle('show'))
+      if (self.classList.contains("open")) {
+        control.setAttribute("aria-expanded", true);
+        content.setAttribute("aria-hidden", false);
+        content.style.maxHeight = content.scrollHeight + "px";
+      } else {
+        control.setAttribute("aria-expanded", false);
+        content.setAttribute("aria-hidden", true);
+        content.style.maxHeight = null;
+      }
+    });
+  });
 });
-
-accordeonHeader.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleAccordeon(e);
-    }
-});
-
-function openAccordeon(elem) {
-    elem.classList.toggle('show')
-}
-
-accordeons.forEach(openAccordeon)
