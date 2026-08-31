@@ -22,19 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const swiper = new Swiper(".swiper", {
-    // Optional parameters
-    slidesPerView: "auto",
+    slidesPerView: 2,
     spaceBetween: 50,
     centeredSlides: true,
-    loop: true,
+    initialSlide: 2,
 
-    // If we need pagination
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
 
-    // Navigation arrows
     navigation: {
       nextEl: ".testimonials-button-next",
       prevEl: ".testimonials-button-prev",

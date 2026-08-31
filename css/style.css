@@ -586,32 +586,41 @@ body {
 .swiper {
   width: 100%;
   border-radius: 45px;
-  padding: 60px 0 120px 0;
+  padding: 60px 0 180px 0;
   background-color: var(--color-dark);
 }
 
-.swiper-slide {
+.swiper__slide {
   height: auto;
-  width: 600px;
   color: var(--color-white);
 }
 
-
-
-.swiper-button-next, .swiper-button-prev {
-  top: auto !important;
-  bottom: 60px !important;
+.testimonials-button-prev,
+.testimonials-button-next {
+  z-index: 50;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 52px;
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.swiper-button-next {
-  right: 270px !important;
+.testimonials-button-prev {
+  left: 25%;
+  transform: rotate(180deg);
 }
 
-.swiper-button-prev {
-  left: 270px !important;
+.testimonials-button-next {
+  right: 25%;
 }
 
-/* Стили для всех точек */
+.swiper-button-disabled {
+  opacity: 30%;
+}
+
 .swiper-pagination-bullet {
   width: 14px;
   height: 14px;
@@ -620,7 +629,6 @@ body {
   clip-path: polygon(50% 15%, 100% 0, 85% 50%, 100% 100%, 50% 85%, 0 100%, 15% 50%, 0 0);
 }
 
-/* Стили для активной точки */
 .swiper-pagination-bullet-active {
   background-color: var(--color-green);
 }
@@ -632,15 +640,30 @@ body {
 }
 
 .review__content {
+  position: relative;
   flex: 1 0 auto;
   border: 1px solid var(--color-green);
   border-radius: 45px;
-  margin-bottom: 48px;
+  margin-bottom: 50px;
   padding: 48px 52px;
+}
+
+.review__content::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-dark);
+  left: 60px;
+  bottom: -20px;
+  border-bottom: 1px solid var(--color-green);
+  border-right: 1px solid var(--color-green);
+  transform: rotate(45deg);
 }
 
 .review__text {
   margin: 0;
+  padding: 0;
 }
 
 .review__bottom {
