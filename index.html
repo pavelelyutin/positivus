@@ -31,7 +31,7 @@
           </ul>
         </nav>
 
-        <button type="button" class="button header__button" aria-label="request a quote">Request a quote</button>
+        <button type="button" class="button header__button button--light" aria-label="request a quote">Request a quote</button>
       </div>
     </div>
   </header>
@@ -517,7 +517,7 @@
     <section class="section testimonials">
       <div class="container testimonials__container">
         <div class="section__top">
-          <h2 class="section__title">Team</h2>
+          <h2 class="section__title">Testimonials</h2>
           <p class="section__subtitle">
             Hear from Our Satisfied Clients: Read Our Testimonials to&nbsp;Learn More about Our Digital Marketing
             Services
@@ -526,7 +526,6 @@
 
         <div class="testimonials__swiper swiper">
           <div class="swiper__wrapper swiper-wrapper">
-            <!-- Slides -->
             <div class="swiper__slide swiper-slide">
               <article class="swiper__review review">
                 <div class="review__content">
@@ -617,10 +616,9 @@
               </article>
             </div>
           </div>
-          <!-- If we need pagination -->
+
           <div class="swiper-pagination"></div>
 
-          <!-- If we need navigation buttons -->
           <button class="testimonials-button-prev btn-reset"><svg width="23" height="23" viewBox="0 0 23 23" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
@@ -636,6 +634,46 @@
             </svg>
           </button>
         </div>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <div class="container contact__container">
+        <div class="section__top">
+          <h2 class="section__title">Contact Us</h2>
+          <p class="section__subtitle">
+            Connect with Us: Let's Discuss Your Digital Marketing Needs
+          </p>
+        </div>
+
+        <div class="contact__wrapper">
+          <form class="contact__form form" action="#">
+            <div class="form__radios">
+              <input type="radio" name="target" id="1">1
+              <input type="radio" name="target" id="2">2
+            </div>
+            <div class="form__inputs">
+              <div class="form__input">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name">
+              </div>
+
+              <div class="form__input">
+                <label for="email">Email*</label>
+                <input type="text" id="email" name="email" placeholder="Email">
+              </div>
+
+              <div class="form__textarea">
+                <label for="message">Message*</label>
+                <textarea name="message" id="message" placeholder="Message" rows="8"></textarea>
+              </div>
+            </div>
+
+            <button type="button" class="button button--dark">Send Message</button>
+
+          </form>
+        </div>
+
       </div>
     </section>
   </main>
