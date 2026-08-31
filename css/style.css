@@ -25,6 +25,10 @@
   --color-dark: #191a23;
   --color-grey: #f3f3f3;
   --color-green: #b9ff66;
+
+  --swiper-pagination-bottom: 60px;
+  --swiper-pagination-bullet-size: 16px;
+  --swiper-pagination-bullet-width: 16px;
 }
 
 * {
@@ -52,6 +56,12 @@ a {
 ul {
   padding: 0;
   list-style-type: none;
+}
+
+.btn-reset {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .button {
@@ -586,9 +596,7 @@ body {
   color: var(--color-white);
 }
 
-.swiper-pagination  {
-  bottom: 60px !important;
-}
+
 
 .swiper-button-next, .swiper-button-prev {
   top: auto !important;
@@ -601,6 +609,20 @@ body {
 
 .swiper-button-prev {
   left: 270px !important;
+}
+
+/* Стили для всех точек */
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-white);
+  border-radius: 0;
+  clip-path: polygon(50% 15%, 100% 0, 85% 50%, 100% 100%, 50% 85%, 0 100%, 15% 50%, 0 0);
+}
+
+/* Стили для активной точки */
+.swiper-pagination-bullet-active {
+  background-color: var(--color-green);
 }
 
 .review {
