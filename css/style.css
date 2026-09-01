@@ -626,7 +626,16 @@ body {
   height: 14px;
   background-color: var(--color-white);
   border-radius: 0;
-  clip-path: polygon(50% 15%, 100% 0, 85% 50%, 100% 100%, 50% 85%, 0 100%, 15% 50%, 0 0);
+  clip-path: polygon(
+    50% 15%,
+    100% 0,
+    85% 50%,
+    100% 100%,
+    50% 85%,
+    0 100%,
+    15% 50%,
+    0 0
+  );
 }
 
 .swiper-pagination-bullet-active {
@@ -681,7 +690,7 @@ body {
   border-radius: 45px;
   padding: 60px 100px;
   background-color: var(--color-grey);
-  background-image: url('../img/contact/contact.svg');
+  background-image: url("../img/contact/contact.svg");
   background-repeat: no-repeat;
   background-position: right -60% top 50%;
 }
@@ -691,6 +700,12 @@ body {
   flex-direction: column;
   gap: 40px;
   max-width: 550px;
+}
+
+.form__radios {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .form__inputs {
@@ -717,4 +732,53 @@ body {
   border-radius: 14px;
   outline: none;
   padding: 18px 30px;
+}
+
+input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+.radio__inner {
+  position: relative;
+  padding-left: 42px;
+}
+
+.radio__label {
+  cursor: pointer;
+}
+
+.radio__inner::before {
+  position: absolute;
+  content: "";
+  border: 1px solid var(--color-dark);
+  border-radius: 50%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-white);
+}
+
+.radio__inner::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  background-color: var(--color-green);
+}
+
+.radio__input:checked + .radio__inner::after {
+  opacity: 1;
 }

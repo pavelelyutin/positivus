@@ -31,7 +31,8 @@
           </ul>
         </nav>
 
-        <button type="button" class="button header__button button--light" aria-label="request a quote">Request a quote</button>
+        <button type="button" class="button header__button button--light" aria-label="request a quote">Request a
+          quote</button>
       </div>
     </div>
   </header>
@@ -649,8 +650,22 @@
         <div class="contact__wrapper">
           <form class="contact__form form" action="#">
             <div class="form__radios">
-              <input type="radio" name="target" id="1">1
-              <input type="radio" name="target" id="2">2
+
+              <div class="form__radio radio">
+                <label class="radio__label" for="radio1">
+                  <input class="radio__input" type="radio" name="target" id="radio1">
+                  <span class="radio__inner">Say Hi</span>
+                </label>
+              </div>
+
+              <div class="form__radio radio">
+                <label class="radio__label" for="radio2">
+                  <input class="radio__input" type="radio" name="target" id="radio2">
+                  <span class="radio__inner">Send Request</span>
+                </label>
+              </div>
+
+
             </div>
             <div class="form__inputs">
               <div class="form__input">
