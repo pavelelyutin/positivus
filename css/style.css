@@ -75,7 +75,7 @@ ul {
   transition: color 0.3s ease-in-out;
 }
 
-.button::before {
+/* .button::before {
   content: "";
   width: 240px;
   height: 240px;
@@ -91,15 +91,19 @@ ul {
 
 .button:hover::before {
   transform: translate(-50%, -50%) scale(1);
-}
+} */
 
-.button:hover {
+/* .button:hover {
   color: var(--color-white);
-}
+} */
 
 .button--dark {
   color: var(--color-white);
   background-color: var(--color-dark);
+}
+
+.button--green {
+  background-color: var(--color-green);
 }
 
 body {
@@ -781,4 +785,113 @@ input[type="radio"] {
 
 .radio__input:checked + .radio__inner::after {
   opacity: 1;
+}
+
+/* footer */
+.footer {
+  color: var(--color-white);
+}
+
+.footer a {
+  color: var(--color-white);
+}
+
+.footer__wrapper {
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  padding: 55px 60px 50px;
+  background-color: var(--color-dark);
+}
+
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__nav .nav__link {
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.footer__nav .nav__link:hover {
+  text-decoration: none;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.footer__left {
+  max-width: 340px;
+}
+
+.footer__title {
+  display: inline-block;
+  border-radius: 7px;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0 7px;
+  font-size: 20px;
+  color: var(--color-black);
+  background-color: var(--color-green);
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-style: normal;
+}
+
+.address p {
+  margin: 0;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid var(--color-white);
+  padding-top: 50px;
+}
+
+.footer__link {
+  text-decoration: underline;
+}
+
+.footer__link:hover {
+  text-decoration: none;
+}
+
+.footer__form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 630px;
+  border-radius: 14px;
+  padding: 60px 40px;
+  background-color: #292a32;
+}
+
+.footer__form input {
+  max-width: 285px;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+.footer__form input::placeholder {
+  color: var(--color-white);
 }
