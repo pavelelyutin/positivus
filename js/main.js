@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const accordions = document.querySelectorAll(".accordion");
 
+  // accordion
   accordions.forEach((el) => {
     el.addEventListener("click", (event) => {
       const self = event.currentTarget;
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // swiper
   const swiper = new Swiper(".swiper", {
     slidesPerView: 2,
     spaceBetween: 50,
@@ -37,4 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".testimonials-button-prev",
     },
   });
+
+  // burger
+  const burger = document.querySelector('.burger')
+  const headerNav = document.querySelector('.header__nav')
+
+  burger.addEventListener('click', function () {
+    burger.classList.toggle('active')
+    headerNav.classList.toggle('active')
+  })
+
+
+
 });

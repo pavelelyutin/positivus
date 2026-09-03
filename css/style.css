@@ -24,6 +24,7 @@
   --color-black: #000000;
   --color-dark: #191a23;
   --color-grey: #f3f3f3;
+  --color-grey-dark: #a0a0a0;
   --color-green: #b9ff66;
 
   --swiper-pagination-bottom: 60px;
@@ -33,6 +34,11 @@
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: "SpaceGrotesk", sans-serif;
+  font-size: 18px;
 }
 
 .visually-hidden {
@@ -65,37 +71,18 @@ ul {
 }
 
 .button {
-  position: relative;
-  border: none;
+  border: 1px solid var(--color-dark);
   border-radius: 14px;
   padding: 20px 35px;
-  background-color: transparent;
-  cursor: pointer;
-  overflow: hidden;
-  transition: color 0.3s ease-in-out;
+  font-size: 20px;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
-/* .button::before {
-  content: "";
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background-color: var(--color-dark);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  z-index: -1;
-  transition: transform 0.3s ease-in-out;
+.button--light {
+  background-color: var(--color-white);
 }
-
-.button:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-} */
-
-/* .button:hover {
-  color: var(--color-white);
-} */
 
 .button--dark {
   color: var(--color-white);
@@ -106,9 +93,33 @@ ul {
   background-color: var(--color-green);
 }
 
-body {
-  font-family: "SpaceGrotesk", sans-serif;
-  font-size: 18px;
+.button:focus-visible {
+  outline: 4px solid var(--color-green);
+  outline-offset: 2px;
+}
+
+.button--light:hover:not(:focus-visible) {
+  color: var(--color-white);
+  background-color: var(--color-dark);
+}
+
+.button--dark:hover:not(:focus-visible) {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.button--green:hover:not(:focus-visible) {
+  color: var(--color-white);
+  background-color: var(--color-dark);
+}
+
+.button:active:not(:focus-visible) {
+  color: var(--color-black);
+  background-color: var(--color-green);
+}
+
+.button--green:active:not(:focus-visible) {
+  background-color: var(--color-white);
 }
 
 .section {
@@ -164,15 +175,74 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
+  margin: 0;
 }
 
 .nav__link {
   font-size: 20px;
+  transition: color 0.2s ease-in-out;
 }
 
-.header__button {
+.nav__link:focus-visible {
+  outline: 4px solid var(--color-green);
+}
+
+.nav__link:hover:not(:focus-visible) {
+  color: var(--color-grey-dark);
+}
+
+.nav__link:active:not(:focus-visible) {
+  color: var(--color-black);
+}
+
+.burger {
+  display: none;
+  position: relative;
+  width: 52px;
+  height: 52px;
   border: 1px solid var(--color-dark);
-  font-size: 20px;
+  border-radius: 14px;
+}
+
+.burger__line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--color-dark);
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+/* Исходное состояние */
+.burger__line:first-child {
+  transform: translate(-50%, -50%) translateY(-10px);
+}
+
+.burger__line:nth-child(2) {
+  transform: translate(-50%, -50%);
+}
+
+.burger__line:last-child {
+  transform: translate(-50%, -50%) translateY(10px);
+}
+
+/* Активное состояние (крестик) */
+.active .burger__line:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.active .burger__line:nth-child(2) {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.active .burger__line:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* hero */
@@ -185,6 +255,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .hero__title {
@@ -192,7 +263,6 @@ body {
   margin: 0;
   margin-bottom: 35px;
   font-size: 60px;
-  line-height: 77px;
 }
 
 .hero__subtitle {
@@ -200,7 +270,6 @@ body {
   margin: 0;
   margin-bottom: 35px;
   font-size: 20px;
-  line-height: 28px;
 }
 
 .hero__button {
@@ -779,7 +848,7 @@ input[type="radio"] {
   width: 16px;
   height: 16px;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   background-color: var(--color-green);
 }
 
@@ -894,4 +963,140 @@ input[type="radio"] {
 
 .footer__form input::placeholder {
   color: var(--color-white);
+}
+
+@media (max-width: 1199px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .button {
+    padding: 15px 25px;
+    font-size: 18px;
+  }
+
+  /* header */
+  .header {
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+
+  .header__right {
+    gap: 25px;
+  }
+
+  .nav__list {
+    gap: 25px;
+  }
+
+  .nav__link {
+    font-size: 18px;
+  }
+
+  /* hero */
+  .hero__title {
+    margin-bottom: 30px;
+    font-size: 52px;
+  }
+
+  .hero__subtitle {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  .hero__image {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 991px) {
+  body {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 16px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  /* header */
+  .header__nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-shadow: 5px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    transition: left 0.2s ease-in-out;
+  }
+
+  .header__nav.active {
+    left: 0;
+  }
+
+  .header__nav .nav__list {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .header__nav .nav__link {
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  /* hero */
+  .hero__title {
+    margin-bottom: 20px;
+    font-size: 42px;
+  }
+
+  .hero__subtitle {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .hero__image {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* header */
+  .header__logo {
+    max-width: 180px;
+  }
+
+  .header__right {
+    gap: 10px;
+  }
+
+  .header__button {
+    display: none;
+  }
+
+  /* hero */
+  .hero__container {
+    flex-direction: column-reverse;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 36px;
+  }
+
+  .hero__image {
+    max-width: 280px;
+  }
 }
