@@ -42,13 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // burger
   const burger = document.querySelector('.burger')
-  const headerNav = document.querySelector('.header__nav')
+  const headerRight = document.querySelector('.header__right')
 
   burger.addEventListener('click', function () {
     burger.classList.toggle('active')
-    headerNav.classList.toggle('active')
+    headerRight.classList.toggle('active')
   })
-
-
 
 });
