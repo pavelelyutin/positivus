@@ -144,6 +144,7 @@ ul {
 
 .section__subtitle {
   max-width: 600px;
+  margin: 0;
 }
 
 .container {
@@ -166,6 +167,7 @@ ul {
 }
 
 .header__right {
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -196,6 +198,7 @@ ul {
 }
 
 .burger {
+  z-index: 20;
   display: none;
   position: relative;
   width: 52px;
@@ -284,7 +287,6 @@ ul {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-
 }
 
 .companies__image {
@@ -313,6 +315,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   width: calc((100% - 40px) / 2);
   border: 1px solid var(--color-dark);
   border-radius: 45px;
@@ -359,6 +362,7 @@ ul {
 .services-card__title {
   max-width: 240px;
   margin: 0;
+  margin-bottom: 20px;
   font-size: 30px;
 }
 
@@ -970,6 +974,15 @@ input[type="radio"] {
     font-size: 16px;
   }
 
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .section__top {
+    margin-bottom: 50px;
+  }
+
   .container {
     padding-left: 25px;
     padding-right: 25px;
@@ -1012,11 +1025,37 @@ input[type="radio"] {
   .hero__image {
     max-width: 480px;
   }
+
+  /* services */
+  .services-card__title {
+    font-size: 24px;
+  }
+
+  .services-card__link {
+    font-size: 16px;
+  }
+
+  .services-card__link svg {
+    max-width: 30px;
+  }
+
+  .services-card__image {
+    max-width: 140px;
+  }
 }
 
 @media (max-width: 991px) {
   body {
     font-size: 14px;
+  }
+
+  .section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .section__top {
+    margin-bottom: 30px;
   }
 
   .button {
@@ -1078,9 +1117,40 @@ input[type="radio"] {
     column-gap: 50px;
     row-gap: 10px;
   }
+
+  /* services */
+  .services__list {
+    gap: 20px;
+  }
+
+  .services-card__title {
+    font-size: 22px;
+  }
+
+  .services-card__link {
+    font-size: 16px;
+  }
+
+  .services-card {
+    width: calc((100% - 20px) / 2);
+    padding: 30px;
+  }
+
+  .services-card__link svg {
+    max-width: 30px;
+  }
+
+  .services-card__image {
+    max-width: 100px;
+  }
 }
 
 @media (max-width: 767px) {
+  .section__top {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
   /* header */
   .header__logo {
     max-width: 180px;
@@ -1102,6 +1172,16 @@ input[type="radio"] {
   .hero__image {
     max-width: 280px;
   }
+
+  /* services */
+  .services-card {
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+
+  .services-card__title {
+    max-width: 180px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1112,5 +1192,10 @@ input[type="radio"] {
 
   .header__nav .nav__list {
     align-items: start;
+  }
+
+  /* services */
+  .services-card {
+    width: 100%;
   }
 }
