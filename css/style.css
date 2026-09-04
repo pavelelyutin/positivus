@@ -397,8 +397,13 @@ ul {
 }
 
 .proposal__content:after {
-  content: url("../img/proposal/proposal.svg");
+  content: "";
   position: absolute;
+  background-image: url("../img/proposal/proposal.svg");
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  width: 400px;
+  height: 400px;
   top: -30px;
   right: 135px;
 }
@@ -1042,6 +1047,15 @@ input[type="radio"] {
   .services-card__image {
     max-width: 140px;
   }
+
+  /* proposal */
+  .proposal__content:after {
+    background-size: 340px 340px;
+    width: 340px;
+    height: 340px;
+    top: -20px;
+    right: 30px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1143,6 +1157,16 @@ input[type="radio"] {
   .services-card__image {
     max-width: 100px;
   }
+
+  /* proposal */
+  .proposal__content:after {
+    background-size: 200px 200px;
+    width: 200px;
+    height: 200px;
+    top: unset;
+    bottom: -20px;
+    right: 20px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1182,6 +1206,17 @@ input[type="radio"] {
   .services-card__title {
     max-width: 180px;
   }
+
+  /* proposal */
+  .proposal__content {
+    padding: 40px;
+  }
+
+  .proposal__content:after {
+    background-size: 140px 140px;
+    width: 140px;
+    height: 140px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1197,5 +1232,10 @@ input[type="radio"] {
   /* services */
   .services-card {
     width: 100%;
+  }
+
+  /* proposal */
+  .proposal__content:after {
+    display: none;
   }
 }
