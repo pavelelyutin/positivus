@@ -520,9 +520,11 @@ ul {
   margin-right: auto;
   font-size: 30px;
   font-weight: 500;
+  text-align: left;
 }
 
 .accordion__icon {
+  flex-shrink: 0;
   position: relative;
   display: inline-block;
   width: 58px;
@@ -1193,9 +1195,49 @@ input[type="radio"] {
   .case__link span {
     font-size: 16px;
   }
+
+  /* workflow */
+  .accordion__control {
+    padding: 30px 40px;
+  }
+
+  .accordion__control::before {
+    left: 40px;
+    bottom: 0;
+  }
+
+  .open .accordion__control::before {
+    width: calc(100% - 80px);
+  }
+
+  .accordion__number {
+    font-size: 40px;
+  }
+
+  .accordion__title {
+    font-size: 24px;
+  }
+
+  .accordion__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .accordion__content {
+    padding: 0 40px;
+    overflow: hidden;
+  }
+
+  .open .accordion__content {
+    padding: 20px 40px 30px 40px;
+  }
 }
 
 @media (max-width: 767px) {
+  .section__title {
+    font-size: 36px;
+  }
+
   /* header */
   .header__logo {
     max-width: 180px;
@@ -1267,9 +1309,56 @@ input[type="radio"] {
     top: unset;
     right: unset;
   }
+
+  /* workflow */
+  .workflow__list {
+    gap: 20px;
+  }
+
+  .accordion {
+    border-radius: 30px;
+  }
+
+  .accordion__control {
+    padding: 20px 20px;
+  }
+
+  .accordion__control::before {
+    left: 20px;
+  }
+
+  .open .accordion__control::before {
+    width: calc(100% - 40px);
+  }
+
+  .accordion__number {
+    margin-right: 15px;
+    font-size: 32px;
+  }
+
+  .accordion__title {
+    font-size: 18px;
+  }
+
+  .accordion__icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .accordion__content {
+    padding: 0 20px;
+  }
+
+  .open .accordion__content {
+    padding: 20px 20px 20px 20px;
+  }
 }
 
 @media (max-width: 576px) {
+  .section__title {
+    font-size: 30px;
+  }
+
   /* header */
   .header__right {
     align-items: start;
@@ -1287,5 +1376,20 @@ input[type="radio"] {
   /* proposal */
   .proposal__content:after {
     display: none;
+  }
+
+  /* workflow */
+  .accordion__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .accordion__number {
+    font-size: 26px;
+    margin-right: 10px;
+  }
+
+  .accordion__title {
+    font-size: 16px;
   }
 }
