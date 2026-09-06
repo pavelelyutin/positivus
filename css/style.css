@@ -710,16 +710,7 @@ ul {
   height: 14px;
   background-color: var(--color-white);
   border-radius: 0;
-  clip-path: polygon(
-    50% 15%,
-    100% 0,
-    85% 50%,
-    100% 100%,
-    50% 85%,
-    0 100%,
-    15% 50%,
-    0 0
-  );
+  clip-path: polygon(50% 15%, 100% 0, 85% 50%, 100% 100%, 50% 85%, 0 100%, 15% 50%, 0 0);
 }
 
 .swiper-pagination-bullet-active {
@@ -1035,6 +1026,10 @@ input[type="radio"] {
   }
 
   /* services */
+  .services__list {
+    gap: 30px;
+  }
+
   .services-card__title {
     font-size: 24px;
   }
@@ -1058,6 +1053,21 @@ input[type="radio"] {
     height: 340px;
     top: -20px;
     right: 30px;
+  }
+
+  /* team */
+  .team__list {
+    gap: 30px;
+  }
+
+  .employee__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .employee__image {
+    max-width: 80px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1231,9 +1241,23 @@ input[type="radio"] {
   .open .accordion__content {
     padding: 20px 40px 30px 40px;
   }
+
+  /* team */
+  .team__list {
+    gap: 20px;
+  }
+
+  .team__item {
+    max-width: calc((100% - (20px)) / 2);
+  }
 }
 
 @media (max-width: 767px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
   .section__title {
     font-size: 36px;
   }
@@ -1272,13 +1296,11 @@ input[type="radio"] {
 
   /* proposal */
   .proposal__content {
-    padding: 40px;
+    padding: 40px 30px;
   }
 
   .proposal__content:after {
-    background-size: 140px 140px;
-    width: 140px;
-    height: 140px;
+    display: none;
   }
 
   /* cases */
@@ -1352,6 +1374,23 @@ input[type="radio"] {
   .open .accordion__content {
     padding: 20px 20px 20px 20px;
   }
+
+  /* team */
+  .employee {
+    padding: 30px;
+  }
+
+  .employee__top {
+    margin-bottom: 40px;
+  }
+
+  .employee__top::after {
+    bottom: -20px;
+  }
+
+  .employee__image {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1391,5 +1430,24 @@ input[type="radio"] {
 
   .accordion__title {
     font-size: 16px;
+  }
+
+  /* team */
+  .team__item {
+    max-width: 100%;
+  }
+
+  .employee {
+    padding: 30px 20px;
+  }
+
+  .employee__top {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .employee__image {
+    margin-bottom: 0;
+    margin-right: 10px;
   }
 }
