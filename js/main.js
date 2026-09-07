@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // swiper
   const swiper = new Swiper(".swiper", {
-    slidesPerView: 2,
-    spaceBetween: 50,
+    slidesPerView: 1.25,
+    spaceBetween: 20,
     centeredSlides: true,
     initialSlide: 2,
 
@@ -38,6 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: ".testimonials-button-next",
       prevEl: ".testimonials-button-prev",
     },
+
+    breakpoints: {
+      576: {
+        slidesPerView: 1.5,
+        spaceBetween: 30,
+      },
+      991: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      }
+    }
   });
 
   // burger
