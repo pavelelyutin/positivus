@@ -710,16 +710,7 @@ ul {
   height: 14px;
   background-color: var(--color-white);
   border-radius: 0;
-  clip-path: polygon(
-    50% 15%,
-    100% 0,
-    85% 50%,
-    100% 100%,
-    50% 85%,
-    0 100%,
-    15% 50%,
-    0 0
-  );
+  clip-path: polygon(50% 15%, 100% 0, 85% 50%, 100% 100%, 50% 85%, 0 100%, 15% 50%, 0 0);
 }
 
 .swiper-pagination-bullet-active {
@@ -748,7 +739,7 @@ ul {
   height: 40px;
   background-color: var(--color-dark);
   left: 60px;
-  bottom: -20px;
+  bottom: -21px;
   border-bottom: 1px solid var(--color-green);
   border-right: 1px solid var(--color-green);
   transform: rotate(45deg);
@@ -776,7 +767,7 @@ ul {
   background-color: var(--color-grey);
   background-image: url("../img/contact/contact.svg");
   background-repeat: no-repeat;
-  background-position: right -60% top 50%;
+  background-position: right -330px top 50%;
 }
 
 .form {
@@ -1084,6 +1075,13 @@ input[type="radio"] {
     margin-bottom: 50px;
     padding: 36px 40px;
   }
+
+  /* contact */
+  .contact__wrapper {
+    padding: 50px 60px;
+    background-size: 500px 500px;
+    background-position: right -260px top 50%;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1275,6 +1273,15 @@ input[type="radio"] {
     margin-bottom: 50px;
     padding: 25px 30px;
   }
+
+  /* contact */
+  .form {
+    max-width: 100%;
+  }
+
+  .contact__wrapper {
+    background-image: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1416,6 +1423,20 @@ input[type="radio"] {
   .employee__image {
     margin-bottom: 10px;
   }
+
+  /* testimonials */
+  .testimonials-button-prev {
+    left: 15%;
+  }
+
+  .testimonials-button-next {
+    right: 15%;
+  }
+
+  /* contact */
+  .contact__wrapper {
+    padding: 40px 30px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1474,5 +1495,31 @@ input[type="radio"] {
   .employee__image {
     margin-bottom: 0;
     margin-right: 10px;
+  }
+
+  /* testimonials */
+  .swiper {
+    padding: 50px 0 120px 0;
+  }
+
+  .review__content {
+    padding: 25px 20px;
+  }
+
+  .testimonials-button-prev {
+    left: 10%;
+    width: 30px;
+    height: 30px;
+  }
+
+  .testimonials-button-next {
+    right: 10%;
+    width: 30px;
+    height: 30px;
+  }
+
+    /* contact */
+  .contact__wrapper {
+    padding: 40px 20px;
   }
 }
