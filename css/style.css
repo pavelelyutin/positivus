@@ -32,8 +32,14 @@
   --swiper-pagination-bullet-width: 16px;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: thin;
 }
 
 body {
@@ -77,7 +83,8 @@ ul {
   font-size: 20px;
   transition:
     color 0.2s ease-in-out,
-    background-color 0.2s ease-in-out;
+    background-color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 
 .button--light {
@@ -113,9 +120,14 @@ ul {
   background-color: var(--color-dark);
 }
 
+.button:hover:not(:focus-visible) {
+  transform: scale(1.05);
+}
+
 .button:active:not(:focus-visible) {
   color: var(--color-black);
   background-color: var(--color-green);
+  transform: scale(1);
 }
 
 .button--green:active:not(:focus-visible) {
@@ -184,7 +196,7 @@ ul {
   border-radius: 14px;
   padding: 5px 15px;
   font-size: 20px;
-  transition: background-color .2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .nav__link:focus-visible {
@@ -301,8 +313,17 @@ ul {
     filter 0.2s ease-in-out;
 }
 
-.companies__link:hover .companies__image {
-  transform: scale(1.1);
+.companies__link {
+  border-radius: 15px;
+}
+
+.companies__link:focus-visible {
+  outline: 4px solid var(--color-green);
+  outline-offset: 10px;
+}
+
+.companies__link:hover:not(:focus-visible) .companies__image {
+  transform: scale(1.05);
   filter: grayscale(0);
 }
 
@@ -712,7 +733,16 @@ ul {
   height: 14px;
   background-color: var(--color-white);
   border-radius: 0;
-  clip-path: polygon(50% 15%, 100% 0, 85% 50%, 100% 100%, 50% 85%, 0 100%, 15% 50%, 0 0);
+  clip-path: polygon(
+    50% 15%,
+    100% 0,
+    85% 50%,
+    100% 100%,
+    50% 85%,
+    0 100%,
+    15% 50%,
+    0 0
+  );
 }
 
 .swiper-pagination-bullet-active {
@@ -958,8 +988,9 @@ input[type="radio"] {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 20px;
-  max-width: 630px;
+  max-width: unset;
   border-radius: 14px;
   padding: 60px 40px;
   background-color: #292a32;
