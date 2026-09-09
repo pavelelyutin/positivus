@@ -40,6 +40,7 @@
 
 html {
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -137,6 +138,7 @@ ul {
 .section {
   padding-top: 70px;
   padding-bottom: 70px;
+  scroll-margin-top: 80px; 
 }
 
 .section__top {
@@ -168,8 +170,14 @@ ul {
 
 /* header */
 .header {
-  padding-top: 60px;
-  padding-bottom: 35px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 .header__container {
@@ -262,7 +270,7 @@ ul {
 
 /* hero */
 .hero {
-  padding-top: 35px;
+  padding-top: 155px;
   padding-bottom: 35px;
 }
 
