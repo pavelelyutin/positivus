@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
   <script defer src="./js/main.js"></script>
 </head>
 
@@ -53,12 +54,14 @@
             Our digital marketing agency helps businesses grow and succeed online through
             a&nbsp;range of&nbsp;services including SEO, PPC, social media marketing, and content creation.
           </p>
-          <button type="button" class="button btn-reset button--dark" aria-label="book a consultation">
+          <button type="button" class="button btn-reset button--dark hero__button">
             Book a consultation
           </button>
         </div>
-        <img class="hero__image" src="./img/hero/hero.svg"
-          alt="Positivus - navigating the digital landscape for success">
+        <!-- <img class="hero__image" src="./img/hero/hero.svg"
+          alt="Positivus - navigating the digital landscape for success"> -->
+        <object class="hero__image" id="hero-svg" type="image/svg+xml" data="./img/hero/hero.svg"></object>
+
       </div>
     </section>
 
@@ -72,31 +75,27 @@
                 <img src="./img/companies/amazon.svg" class="companies__image" alt="amazon logo">
               </a>
             </li>
-
             <li class="companies__item">
               <a href="#" class="companies__link" aria-label="visit dribble site">
                 <img src="./img/companies/dribble.svg" class="companies__image" alt="dribble logo">
               </a>
             </li>
-
             <li class="companies__item">
               <a href="#" class="companies__link" aria-label="visit hubspot site">
                 <img src="./img/companies/hubspot.svg" class="companies__image" alt="hubspot logo">
               </a>
             </li>
-
             <li class="companies__item">
               <a href="#" class="companies__link" aria-label="visit notion site">
                 <img src="./img/companies/notion.svg" class="companies__image" alt="notion logo">
               </a>
             </li>
-
             <li class="companies__item">
               <a href="#" class="companies__link" aria-label="visit netflix site">
                 <img src="./img/companies/netflix.svg" class="companies__image" alt="netflix logo">
               </a>
             </li>
-
+            
             <li class="companies__item">
               <a href="#" class="companies__link" aria-label="visit zoom site">
                 <img src="./img/companies/zoom.svg" class="companies__image" alt="zoom logo">
@@ -742,7 +741,8 @@
             <address class="footer__address address">
               <p class="address__email">Email: <a href="mailto:info@positivus.com">info@positivus.com</a></p>
               <p class="address__phone">Phone: <a href="tel:5555678901">555-567-8901</a></p>
-              <p class="address__location">Address: 1234 Main St Moonstone City, Stardust State 12345</p>
+              <p class="address__location">Address: <a href="#">1234 Main St Moonstone City, Stardust State 12345</a>
+              </p>
             </address>
           </div>
           <form action="#" class="footer__form form">

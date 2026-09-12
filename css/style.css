@@ -41,11 +41,16 @@
 html {
   scrollbar-width: thin;
   scroll-behavior: smooth;
+  scrollbar-color: var(--color-green) var(--color-dark);
 }
 
 body {
   font-family: "SpaceGrotesk", sans-serif;
   font-size: 18px;
+}
+
+.body-hidden {
+  overflow: hidden;
 }
 
 .visually-hidden {
@@ -84,8 +89,7 @@ ul {
   font-size: 20px;
   transition:
     color 0.2s ease-in-out,
-    background-color 0.2s ease-in-out,
-    transform 0.2s ease-in-out;
+    background-color 0.2s ease-in-out
 }
 
 .button--light {
@@ -121,14 +125,9 @@ ul {
   background-color: var(--color-dark);
 }
 
-.button:hover:not(:focus-visible) {
-  transform: scale(1.05);
-}
-
 .button:active:not(:focus-visible) {
   color: var(--color-black);
   background-color: var(--color-green);
-  transform: scale(1);
 }
 
 .button--green:active:not(:focus-visible) {
@@ -358,6 +357,14 @@ ul {
   padding: 50px;
   background-color: var(--color-grey);
   box-shadow: 0 5px 0 0 var(--color-dark);
+  transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.services-card:has(.services-card__link:focus-visible) {
+  outline: 4px solid var(--color-green);
+  outline-offset: 2px;
+  box-shadow: none;
+  transform: translateY(2px);
 }
 
 .services-card--green {
@@ -714,12 +721,13 @@ ul {
 /* team */
 .team__list {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 40px;
   flex-wrap: wrap;
 }
 
 .team__item {
+  display: flex;
   max-width: calc((100% - (40px * 2)) / 3);
 }
 
@@ -1108,6 +1116,16 @@ input[type="radio"] {
   font-style: normal;
 }
 
+.address a:focus-visible {
+  outline: none;
+  color: var(--color-green);
+  text-decoration: underline;
+}
+
+.address a:hover:not(:focus-visible) {
+  color: var(--color-green);
+}
+
 .address p {
   margin: 0;
 }
@@ -1132,7 +1150,7 @@ input[type="radio"] {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 20px;
   max-width: unset;
   border-radius: 14px;
@@ -1142,6 +1160,7 @@ input[type="radio"] {
 
 .footer__form input {
   max-width: 285px;
+  height: 100%;
   border: 1px solid var(--color-white);
   color: var(--color-white);
   background-color: transparent;
@@ -1643,6 +1662,16 @@ input[type="radio"] {
 
   .testimonials-button-next {
     right: 15%;
+  }
+
+  .testimonials-button-prev svg path,
+  .testimonials-button-next svg path {
+    transition: fill .2s ease-in-out;
+  }
+
+  .testimonials-button-prev:hover svg path,
+  .testimonials-button-next:hover svg path {
+    fill: var(--color-green);
   }
 
   /* contact */
