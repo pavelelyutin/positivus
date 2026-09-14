@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsap.from(".case", {
     scrollTrigger: {
-      trigger: ".workflow",
+      trigger: ".case",
       start: "top 80%",
       toggleActions: "play none none none"
     }, y: -100, opacity: 0, stagger: 0.15
