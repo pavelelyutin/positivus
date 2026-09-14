@@ -111,7 +111,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  gsap.from(".hero__title", { x: -500, opacity: 0 });
-  gsap.from(".hero__subtitle", { x: -500, opacity: 0, duration: 0.6 });
-  gsap.from(".hero__button", { x: -500, opacity: 0, duration: 0.7 });
+  gsap.from(".hero__title", { x: -100, opacity: 0 });
+  gsap.from(".hero__subtitle", { x: -100, opacity: 0, duration: 0.8 });
+  gsap.from(".hero__button", { x: -100, opacity: 0, duration: 1 });
+  gsap.from(".companies__item", {
+    scrollTrigger: {
+      trigger: ".partnership",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }, x: -100, opacity: 0, stagger: 0.15
+  });
+  gsap.from(".services-card", {
+    scrollTrigger: {
+      trigger: ".services",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }, x: -100, opacity: 0, stagger: 0.15
+  });
+  gsap.from(".team__item", {
+    scrollTrigger: {
+      trigger: ".team",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }, x: -100, opacity: 0, stagger: 0.15
+  });
+  gsap.from(".accordion", {
+    scrollTrigger: {
+      trigger: ".workflow",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }, x: -100, opacity: 0, stagger: 0.15
+  });
+
+  gsap.from(".case", {
+    scrollTrigger: {
+      trigger: ".workflow",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }, y: -100, opacity: 0, stagger: 0.15
+  });
+
+  gsap.to('.contact__wrapper', {
+    '--image-rotation': '360deg',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.contact',
+      start: 'top 80%',
+      end: 'bottom top',
+      scrub: true,
+    }
+  });
+
 });

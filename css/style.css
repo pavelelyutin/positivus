@@ -89,7 +89,7 @@ ul {
   font-size: 20px;
   transition:
     color 0.2s ease-in-out,
-    background-color 0.2s ease-in-out
+    background-color 0.2s ease-in-out;
 }
 
 .button--light {
@@ -357,14 +357,11 @@ ul {
   padding: 50px;
   background-color: var(--color-grey);
   box-shadow: 0 5px 0 0 var(--color-dark);
-  transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
 }
 
 .services-card:has(.services-card__link:focus-visible) {
   outline: 4px solid var(--color-green);
   outline-offset: 2px;
-  box-shadow: none;
-  transform: translateY(2px);
 }
 
 .services-card--green {
@@ -904,12 +901,24 @@ ul {
 
 /* contact */
 .contact__wrapper {
+  position: relative;
   border-radius: 45px;
   padding: 60px 100px;
   background-color: var(--color-grey);
+  overflow: hidden;
+  --image-rotation: 0deg;
+}
+
+.contact__wrapper::before {
+  content: "";
+  position: absolute;
+  right: -300px;
+  top: 50%;
+  transform: translateY(-50%) rotate(var(--image-rotation));
+  width: 600px;
+  height: 600px;
   background-image: url("../img/contact/contact.svg");
-  background-repeat: no-repeat;
-  background-position: right -330px top 50%;
+  background-size: 600px 600px;
 }
 
 .form {
@@ -1045,7 +1054,7 @@ input[type="radio"] {
 .footer-nav__link {
   text-decoration: underline;
   font-size: 18px;
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .footer-nav__link:focus-visible {
@@ -1066,7 +1075,7 @@ input[type="radio"] {
 
 .social__link img {
   border-radius: 50%;
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .social__link:focus-visible {
@@ -1285,11 +1294,11 @@ input[type="radio"] {
   }
 
   /* contact */
-  .contact__wrapper {
-    padding: 50px 60px;
-    background-size: 500px 500px;
-    background-position: right -260px top 50%;
-  }
+  .contact__wrapper::before {
+  width: 500px;
+  height: 500px;
+  background-size: 500px 500px;
+}
 
   /* footer */
   .footer__top {
@@ -1510,7 +1519,7 @@ input[type="radio"] {
     max-width: 100%;
   }
 
-  .contact__wrapper {
+  .contact__wrapper::before {
     background-image: none;
   }
 }
@@ -1666,7 +1675,7 @@ input[type="radio"] {
 
   .testimonials-button-prev svg path,
   .testimonials-button-next svg path {
-    transition: fill .2s ease-in-out;
+    transition: fill 0.2s ease-in-out;
   }
 
   .testimonials-button-prev:hover svg path,
@@ -1694,12 +1703,17 @@ input[type="radio"] {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .section__title {
     font-size: 30px;
   }
 
   /* header */
+  .header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
   .header__right {
     align-items: start;
   }
