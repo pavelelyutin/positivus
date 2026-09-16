@@ -3,6 +3,7 @@
   src: url("../fonts/SpaceGrotesk-Regular.woff2") format("woff2");
   font-display: swap;
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: url("../fonts/SpaceGrotesk-Medium.woff2") format("woff2");
   font-display: swap;
   font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
@@ -17,6 +19,7 @@
   src: url("../fonts/SpaceGrotesk-Bold.woff2") format("woff2");
   font-display: swap;
   font-weight: 700;
+  font-display: swap;
 }
 
 :root {
