@@ -112,8 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   gsap.from(".hero__title", { x: -100, opacity: 0 });
+
   gsap.from(".hero__subtitle", { x: -100, opacity: 0, duration: 0.8 });
+
   gsap.from(".hero__button", { x: -100, opacity: 0, duration: 1 });
+
   gsap.from(".companies__item", {
     scrollTrigger: {
       trigger: ".partnership",
@@ -121,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play none none none"
     }, x: -100, opacity: 0, stagger: 0.15
   });
+
   gsap.from(".services-card", {
     scrollTrigger: {
       trigger: ".services",
@@ -128,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play none none none"
     }, x: -100, opacity: 0, stagger: 0.15
   });
+
   gsap.from(".team__item", {
     scrollTrigger: {
       trigger: ".team",
@@ -135,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play none none none"
     }, x: -100, opacity: 0, stagger: 0.15
   });
+  
   gsap.from(".accordion", {
     scrollTrigger: {
       trigger: ".workflow",
