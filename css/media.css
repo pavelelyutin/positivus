@@ -66,6 +66,10 @@
     gap: 30px;
   }
 
+  .services-card__content {
+    gap: 40px;
+  }
+
   .services-card__title {
     font-size: 24px;
   }
@@ -225,6 +229,10 @@
     gap: 20px;
   }
 
+  .services-card__content {
+    gap: 30px;
+  }
+
   .services-card__title {
     font-size: 22px;
   }
@@ -381,6 +389,10 @@
     align-items: start;
   }
 
+  .services-card__content {
+    gap: 20px;
+  }
+
   .services-card__title {
     max-width: 180px;
   }
@@ -492,19 +504,14 @@
     right: 15%;
   }
 
-  .testimonials-button-prev svg path,
-  .testimonials-button-next svg path {
-    transition: fill 0.2s ease-in-out;
-  }
-
-  .testimonials-button-prev:hover svg path,
-  .testimonials-button-next:hover svg path {
-    fill: var(--color-green);
-  }
-
   /* contact */
   .contact__wrapper {
     padding: 40px 30px;
+  }
+
+  .form__input input,
+  .form__textarea textarea {
+    padding: 18px 20px;
   }
 
   /* footer */
