@@ -287,7 +287,7 @@ ul {
 
 .hero__container {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
@@ -643,7 +643,6 @@ ul {
   margin-right: auto;
   font-size: 30px;
   font-weight: 500;
-  line-height: 38px;
   text-align: left;
 }
 
