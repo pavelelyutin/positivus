@@ -83,34 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // gsap animation
-  const heroSvg = document.getElementById("hero-svg");
-
-  heroSvg.addEventListener("load", () => {
-    const docSvg = heroSvg.contentDocument;
-    const heroIcons = docSvg.querySelectorAll(".hero__svg-icon");
-
-    heroIcons.forEach((heroIcon) => {
-      moveRandomly(heroIcon);
-    });
-  });
-
-  function moveRandomly(element) {
-    const randomX = gsap.utils.random(-10, 10);
-    const randomY = gsap.utils.random(-10, 10);
-
-    const randomDuration = gsap.utils.random(1, 2);
-
-    gsap.to(element, {
-      x: randomX,
-      y: randomY,
-      duration: randomDuration,
-      ease: "sine.inOut",
-      onComplete: () => {
-        moveRandomly(element);
-      },
-    });
-  }
-
   gsap.from(".hero__title", { x: -100, opacity: 0 });
 
   gsap.from(".hero__subtitle", { x: -100, opacity: 0, duration: 0.8 });
@@ -167,5 +139,4 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: true,
     }
   });
-
 });
