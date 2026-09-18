@@ -90,6 +90,7 @@ ul {
   border-radius: 14px;
   padding: 20px 35px;
   font-size: 20px;
+  line-height: 28px;
   transition:
     color 0.2s ease-in-out,
     background-color 0.2s ease-in-out;
@@ -155,12 +156,15 @@ ul {
   margin: 0;
   padding: 0 7px;
   font-size: 40px;
+  font-weight: 500;
+  line-height: 51px;
   background-color: var(--color-green);
 }
 
 .section__subtitle {
   max-width: 600px;
   margin: 0;
+  line-height: 23px;
 }
 
 .container {
@@ -197,13 +201,13 @@ ul {
   z-index: 10;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 25px;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 10px;
   margin: 0;
 }
 
@@ -277,7 +281,7 @@ ul {
 
 /* hero */
 .hero {
-  padding-top: 160px;
+  padding-top: 165px;
   padding-bottom: 35px;
 }
 
@@ -293,6 +297,8 @@ ul {
   margin: 0;
   margin-bottom: 35px;
   font-size: 60px;
+  font-weight: 500;
+  line-height: 77px;
 }
 
 .hero__subtitle {
@@ -300,6 +306,7 @@ ul {
   margin: 0;
   margin-bottom: 35px;
   font-size: 20px;
+  line-height: 28px;
 }
 
 .hero__button {
@@ -316,6 +323,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .companies__image {
@@ -400,10 +408,11 @@ ul {
   flex-direction: column;
   justify-content: space-between;
   align-self: stretch;
+  gap: 70px;
 }
 
 .services-card__image {
-  max-width: 200px;
+  max-width: 210px;
 }
 
 .services-card__title {
@@ -411,6 +420,8 @@ ul {
   margin: 0;
   margin-bottom: 20px;
   font-size: 30px;
+  font-weight: 500;
+  line-height: 38px;
 }
 
 .services-card__title span {
@@ -476,19 +487,21 @@ ul {
   width: 400px;
   height: 400px;
   top: -30px;
-  right: 135px;
+  right: 115px;
 }
 
 .proposal__slogan {
   margin: 0;
   margin-bottom: 26px;
   font-size: 30px;
+  font-weight: 500;
 }
 
 .proposal__subtitle {
   max-width: 500px;
   margin: 0;
   margin-bottom: 26px;
+  line-height: 24px;
 }
 
 /* cases */
@@ -530,6 +543,7 @@ ul {
 .case__text {
   margin: 0;
   margin-bottom: 20px;
+  line-height: 23px;
 }
 
 .case__link {
@@ -538,6 +552,7 @@ ul {
   align-items: center;
   align-self: flex-start;
   gap: 15px;
+  line-height: 28px;
 }
 
 .case__link span {
@@ -587,10 +602,9 @@ ul {
 .accordion {
   border: 1px solid var(--color-dark);
   border-radius: 45px;
-  /* padding: 40px 60px; */
+  overflow: hidden;
   background-color: var(--color-grey);
   box-shadow: 0 5px 0 0 var(--color-dark);
-  overflow: hidden;
   transition: background-color 0.3s ease-out;
 }
 
@@ -622,6 +636,7 @@ ul {
   margin-right: 25px;
   font-size: 60px;
   font-weight: 500;
+  line-height: 77px;
 }
 
 .accordion__title {
@@ -709,7 +724,7 @@ ul {
 }
 
 .open .accordion__content {
-  padding: 20px 60px 40px 60px;
+  padding: 40px 60px 40px 60px;
   opacity: 1;
 }
 
@@ -719,16 +734,28 @@ ul {
 }
 
 /* team */
+.team__container {
+  display: flex;
+  flex-direction: column;
+}
+
 .team__list {
   display: flex;
   align-items: stretch;
   gap: 40px;
   flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 40px;
 }
 
 .team__item {
   display: flex;
   max-width: calc((100% - (40px * 2)) / 3);
+}
+
+.team__button {
+  align-self: flex-end;
+  padding: 20px 75px;
 }
 
 .employee {
@@ -761,6 +788,8 @@ ul {
 .employee__name {
   margin: 0;
   font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
 }
 
 .employee__position {
@@ -797,13 +826,14 @@ ul {
 
 .employee__description {
   margin: 0;
+  line-height: 23px;
 }
 
 /* testimonials */
 .swiper {
   width: 100%;
   border-radius: 45px;
-  padding: 60px 0 180px 0;
+  padding: 85px 0 200px 0;
   background-color: var(--color-dark);
 }
 
@@ -832,6 +862,16 @@ ul {
 
 .testimonials-button-next {
   right: 25%;
+}
+
+.testimonials-button-prev svg path,
+.testimonials-button-next svg path {
+  transition: fill 0.2s ease-in-out;
+}
+
+.testimonials-button-prev:hover svg path,
+.testimonials-button-next:hover svg path {
+  fill: var(--color-green);
 }
 
 .swiper-button-disabled {
@@ -871,7 +911,7 @@ ul {
   border: 1px solid var(--color-green);
   border-radius: 45px;
   margin-bottom: 50px;
-  padding: 48px 52px;
+  padding: 40px 50px;
 }
 
 .review__content::after {
@@ -890,6 +930,7 @@ ul {
 .review__text {
   margin: 0;
   padding: 0;
+  line-height: 23px;
 }
 
 .review__bottom {
@@ -906,7 +947,7 @@ ul {
 .contact__wrapper {
   position: relative;
   border-radius: 45px;
-  padding: 60px 100px;
+  padding: 65px 100px;
   background-color: var(--color-grey);
   overflow: hidden;
   --image-rotation: 0deg;
@@ -915,19 +956,20 @@ ul {
 .contact__wrapper::before {
   content: "";
   position: absolute;
-  right: -300px;
+  right: -325px;
   top: 50%;
   transform: translateY(-50%) rotate(var(--image-rotation));
-  width: 600px;
-  height: 600px;
+  width: 650px;
+  height: 650px;
   background-image: url("../img/contact/contact.svg");
-  background-size: 600px 600px;
+  background-size: 650px 650px;
+  background-repeat: no-repeat;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 45px;
   max-width: 550px;
 }
 
@@ -953,6 +995,7 @@ ul {
 .form__input label,
 .form__textarea label {
   font-size: 16px;
+  line-height: 28px;
 }
 
 .form__input input,
@@ -1027,13 +1070,14 @@ input[type="radio"] {
 
 /* footer */
 .footer {
+  padding-top: 70px;
   color: var(--color-white);
 }
 
 .footer__wrapper {
   border-top-left-radius: 45px;
   border-top-right-radius: 45px;
-  padding: 55px 60px 50px;
+  padding: 40px 60px 50px;
   background-color: var(--color-dark);
 }
 
@@ -1111,10 +1155,12 @@ input[type="radio"] {
   display: inline-block;
   border-radius: 7px;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 27px;
   padding: 0 7px;
-  font-size: 20px;
   color: var(--color-black);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
   background-color: var(--color-green);
 }
 
@@ -1127,7 +1173,7 @@ input[type="radio"] {
 
 .address__link {
   color: var(--color-white);
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .address__link:focus-visible {
@@ -1155,7 +1201,7 @@ input[type="radio"] {
 .footer__link {
   color: var(--color-white);
   text-decoration: underline;
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .footer__link:focus-visible {
